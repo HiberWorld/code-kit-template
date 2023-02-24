@@ -9,7 +9,8 @@
   },
   "dependencies": {
     "@hiberworld/code-kit": "latest",
-    "@hiberworld/code-kit-cli": "latest"
+    "@hiberworld/code-kit-cli": "latest",
+    "@hiberworld/code-kit-utils": "latest"
   },
   "devDependencies": {
     "vite": "^4.0.4"

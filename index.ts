@@ -1,5 +1,6 @@
-import { renderScene, Scene, HNode } from '@hiberworld/code-kit';
-import { createExamples } from './examples';
+import { renderScene, Scene } from '@hiberworld/code-kit';
+import { create } from '@hiberworld/code-kit-utils';
+import { createExamples } from './examples/createExamples';
 
 /**
  * Create a world
@@ -7,31 +8,16 @@ import { createExamples } from './examples';
  * Use the transform prop to move the world one step down
  * so that the player is spawned above the ground
  */
-const world: HNode = {
-  transform: {
-    pos: [0, -1, 0],
-  },
-  children: [],
-};
+const world = create({ y: -1 });
 
 /**
  * Create a floor to stand on
  *
  * Use a prefab which a premade object with specific properties like materials and shape.
- * Use the transform prop to scale it up so that the player can stand on it
+ * Scale it up so that the player can stand on it
+ * Lastly add it to the world
  */
-const floor: HNode = {
-  prefabId: 'smooth_rock_cylinder_01',
-  transform: { scale: [8, 0.88, 8] },
-  children: [],
-};
-
-/**
- * Add the floor to the world
- *
- * This is done by adding it as a child of the world object
- */
-world.children?.push(floor);
+create('smooth_rock_cylinder_01', { scaleX: 8, scaleY: 0.88, scaleZ: 8 }).addTo(world);
 
 /**
  * Add examples to the world
@@ -40,7 +26,7 @@ world.children?.push(floor);
  *
  * Remove this line to get rid of the examples
  */
-world.children?.push(createExamples());
+world.add(createExamples());
 
 /**
  * Create the scene and add the world object to it

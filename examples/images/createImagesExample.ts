@@ -1,9 +1,9 @@
-import { HNode } from '@hiberworld/code-kit';
+import { create } from '@hiberworld/code-kit-utils';
 
 export const createImagesExample = () => {
-  const example: HNode = {};
+  const example = create();
 
-  const imageWall: HNode = {
+  const imageWall = create({
     prefabId: 'cube_01',
     remoteTexture: {
       textureUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCYSNrvZLKn2lXb1_IYvM9bA88aNdnKncggy7chstn&s',
@@ -12,9 +12,9 @@ export const createImagesExample = () => {
       pos: [4, 0, 0],
       scale: [16 / 9, 1, 0.1],
     },
-  };
+  });
 
-  const imageWall2: HNode = {
+  const imageWall2 = create({
     prefabId: 'cube_01',
     remoteTexture: {
       textureUrl:
@@ -24,9 +24,9 @@ export const createImagesExample = () => {
       pos: [-4, 0, 0],
       scale: [16 / 9, 1, 0.1],
     },
-  };
+  });
 
-  const imageWall3: HNode = {
+  const imageWall3 = create({
     prefabId: 'cube_01',
     remoteTexture: {
       textureUrl:
@@ -36,9 +36,9 @@ export const createImagesExample = () => {
       pos: [0, 4, 0],
       scale: [16 / 9, 1, 0.1],
     },
-  };
+  });
 
-  example.children = [imageWall, imageWall2, imageWall3];
+  example.add(imageWall, imageWall2, imageWall3);
 
   return example;
 };

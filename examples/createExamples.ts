@@ -1,4 +1,4 @@
-import { HNode } from '@hiberworld/code-kit';
+import { create } from '@hiberworld/code-kit-utils';
 import { createAnimationExample } from './animation/createAnimationExample';
 import { createExample } from './createExample';
 import { createDocsExample } from './docs/createDocsExample';
@@ -6,9 +6,9 @@ import { createPathOfObjects } from './helpers/createPathOfObjects';
 import { createImagesExample } from './images/createImagesExample';
 
 export const createExamples = () => {
-  const examples: HNode = { children: [] };
+  const examples = create();
 
-  examples.children?.push(
+  examples.add(
     createExample(createDocsExample(), 0.3, [15, 2, -1], 'Documentation', 'Read the Hiber Code-Kit documentation', 70),
     createExample(
       createAnimationExample(),
@@ -34,7 +34,7 @@ export const createExamples = () => {
   const waterfalls = createPathOfObjects('fx_particlesystem_waterfall_01', 20, 8, [1, 1, 1], 90, 0, 5);
   const trees = createPathOfObjects('palm_tree_2', 19, 15, [1, 1, 1], -120);
 
-  examples.children?.push(...walls, ...doors, ...waterfalls, ...walls2, ...trees);
+  examples.add(...walls, ...doors, ...waterfalls, ...walls2, ...trees);
 
   return examples;
 };

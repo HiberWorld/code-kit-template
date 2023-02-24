@@ -1,5 +1,6 @@
-import { HNode, Vec3 } from '@hiberworld/code-kit';
+import { Vec3 } from '@hiberworld/code-kit';
 import { prefabs } from '@hiberworld/code-kit';
+import { create } from '@hiberworld/code-kit-utils';
 
 export const createPathOfObjects = (
   id: keyof typeof prefabs,
@@ -9,7 +10,7 @@ export const createPathOfObjects = (
   rot = 0,
   skip?: number,
   only?: number
-): HNode[] => {
+) => {
   const items = [];
   const size = 4;
   const itemsCount = Math.ceil(2 * radius * Math.PI) / size;
@@ -21,7 +22,7 @@ export const createPathOfObjects = (
     if (typeof only !== 'undefined' && index % only !== 0) {
       continue;
     }
-    const element: HNode = {
+    const element = create({
       prefabId: id,
       transform: {
         scale,
@@ -32,7 +33,7 @@ export const createPathOfObjects = (
         ],
         rot: [0, (index / itemsCount) * 360 + rot, 0],
       },
-    };
+    });
     items.push(element);
   }
   return items;
