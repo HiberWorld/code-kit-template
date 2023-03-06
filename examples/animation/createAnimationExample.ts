@@ -105,8 +105,8 @@ export const createAnimationExample = () => {
   const example = create();
 
   const ring = createPathOfObjects('en_p_dirt_row_01');
-  const car = createCar()
-    .moveX(14.5)
+  const car = create()
+    .add(create({ x: 14.5 }).add(createCar()))
     .animate(
       {
         rotY: [0, 180, 360],

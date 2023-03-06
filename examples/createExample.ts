@@ -18,19 +18,22 @@ export const createExample = (
     z: 3,
   }).add(createSignContent(header, body));
 
-  const miniature = clone(example)
-    .scale(miniatureScale)
+  const miniature = create()
     .animate(
       {
         rotY: [0, 180, 360],
       },
       { duration: 8, loop: 'RESTART', easing: 'LINEAR' }
     )
-    .animate(
-      {
-        y: [0, 1.2, 0],
-      },
-      { duration: 2, easing: 'EASE_IN_OUT_QUAD' }
+    .add(
+      create()
+        .animate(
+          {
+            y: [0.8, 1.5, 0.8],
+          },
+          { duration: 2, easing: 'EASE_IN_OUT_QUAD' }
+        )
+        .add(create({ ...clone(example), scale: miniatureScale }))
     );
 
   const roadLength = 20;
