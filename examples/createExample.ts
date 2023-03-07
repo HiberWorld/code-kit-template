@@ -1,5 +1,5 @@
-import { Vec3 } from '@hiberworld/code-kit';
-import { create, clone, HNodeWithMethods } from '@hiberworld/code-kit-utils';
+import { create, HNodeWithMethods, Vec3 } from '@hiberworld/code-kit';
+import { clone } from '@hiberworld/code-kit-utils';
 import { createSign, createSignContent } from './helpers/createSign';
 
 export const createExample = (

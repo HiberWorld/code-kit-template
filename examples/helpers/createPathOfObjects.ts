@@ -1,6 +1,5 @@
-import { Vec3 } from '@hiberworld/code-kit';
-import { prefabs } from '@hiberworld/code-kit';
-import { create } from '@hiberworld/code-kit-utils';
+import { HNode, Vec3 } from '@hiberworld/code-kit';
+import { prefabs, create } from '@hiberworld/code-kit';
 
 export const createPathOfObjects = (
   id: keyof typeof prefabs,
@@ -11,7 +10,7 @@ export const createPathOfObjects = (
   skip?: number,
   only?: number
 ) => {
-  const items = [];
+  const items: HNode[] = [];
   const size = 4;
   const itemsCount = Math.ceil(2 * radius * Math.PI) / size;
 

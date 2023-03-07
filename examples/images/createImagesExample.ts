@@ -1,4 +1,4 @@
-import { create } from '@hiberworld/code-kit-utils';
+import { create } from '@hiberworld/code-kit';
 
 export const createImagesExample = () => {
   const example = create();

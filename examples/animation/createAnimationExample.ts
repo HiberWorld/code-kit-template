@@ -1,9 +1,8 @@
-import { DeepPartial, Transform, Material } from '@hiberworld/code-kit';
-import { create } from '@hiberworld/code-kit-utils';
+import { create, Material, Transform } from '@hiberworld/code-kit';
 import { createPathOfObjects } from '../helpers/createPathOfObjects';
 import { rotatingNode } from '../helpers/rotatingNode';
 
-const createWheel = (transform: DeepPartial<Transform>, material: Material) => ({
+const createWheel = (transform: Transform, material: Material) => ({
   transform,
   children: [
     rotatingNode(

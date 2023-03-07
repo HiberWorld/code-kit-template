@@ -1,4 +1,4 @@
-import { create } from '@hiberworld/code-kit-utils';
+import { create } from '@hiberworld/code-kit';
 
 export const createSignContent = (header: string, body: string) => {
   const signContent = create({
@@ -30,7 +30,10 @@ export const createSign = (header: string, body: string) => {
       header,
       body,
     },
-    rendering: { meshID: 'en_p_wooden_sign_01', materialID: 'palette_01_black' },
+    rendering: {
+      meshID: 'en_p_wooden_sign_01',
+      materialID: 'palette_01_black',
+    },
   }).add(signContent);
 
   return sign;

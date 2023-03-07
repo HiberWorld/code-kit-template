@@ -1,5 +1,4 @@
-import { renderScene, Scene } from '@hiberworld/code-kit';
-import { create } from '@hiberworld/code-kit-utils';
+import { renderScene, Scene, create } from '@hiberworld/code-kit';
 import { createExamples } from './examples/createExamples';
 
 /**
@@ -42,4 +41,4 @@ const scene: Scene = {
 /**
  * Render the scene to the canvas
  */
-renderScene('canvas', scene, { saveToFile: true });
+renderScene(scene, { saveToFile: true });

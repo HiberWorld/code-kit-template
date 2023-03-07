@@ -1,4 +1,4 @@
-import { create } from '@hiberworld/code-kit-utils';
+import { create } from '@hiberworld/code-kit';
 import { createAnimationExample } from './animation/createAnimationExample';
 import { createExample } from './createExample';
 import { createDocsExample } from './docs/createDocsExample';
