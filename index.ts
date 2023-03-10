@@ -5,8 +5,10 @@ import { renderScene, create } from "@hiberworld/code-kit";
  *
  * Use the transform prop to move the world one step down
  * so that the player is spawned above the ground
+ *
+ * NOTE: Make sure to press R for 'respawn' first time you land in the world.
  */
-const world = create();
+const world = create({ y: -1 });
 
 /**
  * Create a ground to stand on
@@ -86,3 +88,7 @@ create("gpl_spawn_point_01", {
  * Render the scene
  */
 renderScene({ root: world, environment: "sunrise_01" });
+
+/**
+ * Next steps: Go to
+ */
