@@ -28,18 +28,19 @@ create("water_plane_01", { y: -1, scaleX: 200, scaleZ: 200 })
   .addTo(world);
 
 /**
- * Add a floating island with some shrubbery, a waterfall and an animated platform
+ * Add a floating island with some shrubbery, a waterfall and an animated platform.
+ * The platform is constructed as an animated group, to illustrate using a wall as
+ * a platform by rotating it 90 degrees without having to counter-rotate the animation.
  */
+const platform = create()
+  .animate({ x: [-6, 0], y: [-9, 0] }, { duration: 4 })
+  .add(create("en_m_wooden_platform_01_wall", { z: 3, rotX: 90 }));
+
 create("smooth_rock_cylinder_02", { x: 20, y: 10 })
   .add(create("fx_particlesystem_waterfall_01", { x: -3.9, y: 1.9 }))
   .add(create("grass_tuft_02_cluster", { scale: 1, x: -3, z: 1, y: 1.5 }))
   .add(create("tree_01_t2", { y: 2.8 }))
-  .add(
-    create("en_m_wooden_platform_01_wall", { z: 3, rotX: 90 }).animate(
-      { x: [-6, 0], y: [-9, 0] },
-      { duration: 4 }
-    )
-  )
+  .add(platform)
   .add(create("goal_01", { y: 2, x: 3, z: -2, material: "palette_02_gold" }))
   .add(create("particle_jar_of_fireflies_01"))
   .addTo(world);
